@@ -1,0 +1,65 @@
+<!-- #Binary Tree -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Binary Tree | VERDHENZ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body class="reference-page">
+  <div class="site-window">
+    <video class="video-background" autoplay muted loop playsinline aria-hidden="true" preload="auto"><source src="{{ url_for('static', filename='assets/background.mp4') }}" type="video/mp4"></video>
+    <div class="window-titlebar"><span>verdhenz.online</span><span class="window-controls" aria-hidden="true"><span>−</span><span>□</span><span>×</span></span></div>
+    <header>
+      <a class="brand" href="{{ url_for('index') }}">VERDHENZ <span aria-hidden="true">✧</span></a>
+      <nav aria-label="Main navigation"><a href="{{ url_for('index') }}">Home</a><a href="{{ url_for('profile') }}">Profile</a><a class="active" href="{{ url_for('works') }}">Works</a><a href="{{ url_for('contact') }}">Contact</a></nav>
+    </header>
+    <main>
+      <a class="back" href="{{ url_for('works') }}">← Back to Works</a>
+      <div class="study-heading"><div><div class="eyebrow">Data structures ✦</div><h1 class="page-title">Binary Tree</h1></div>
+        <div class="wb-tabs study-tabs" role="tablist" aria-label="Binary Tree sections" data-page-tabs>
+          <button class="outline" type="button" id="bt-demo-tab" role="tab" aria-selected="true" aria-controls="bt-demo" data-panel="bt-demo">Try it</button>
+          <button class="outline" type="button" id="bt-info-tab" role="tab" aria-selected="false" aria-controls="bt-info" tabindex="-1" data-panel="bt-info">Basic info</button>
+        </div>
+      </div>
+      <section id="bt-demo" role="tabpanel" class="binary-tree-tool" aria-labelledby="bt-demo-tab">
+        <div class="card" id="binary-tree-workbench" data-endpoint="{{ url_for('binary_tree.binary_tree_api') }}">
+          <h2>Binary Search Tree Visualizer</h2>
+          <p class="muted">Enter whole numbers to build a Binary Search Tree. Smaller values go left; larger values go right. Duplicate values are not allowed.</p>
+          <form id="bt-form">
+            <div class="bt-controls"><div><label for="bt-value">Node value</label><input id="bt-value" type="number" step="1" min="-9999" max="9999" placeholder="e.g. 50"></div><button type="submit">Insert node</button></div>
+          </form>
+          <div class="bt-actions">
+            <button class="outline" type="button" data-bt-action="search">Search</button>
+            <button class="outline" type="button" data-bt-action="delete_node">Delete node</button>
+            <button class="outline" type="button" data-bt-action="post_traversal">Postorder traversal</button>
+            <button class="outline" type="button" id="bt-example">Load example</button>
+            <button class="outline" type="button" id="bt-clear">Clear tree</button>
+          </div>
+          <div class="bt-visual-wrap"><div id="bt-empty" class="bt-empty">Your tree is empty. Insert a value to begin.</div><svg id="binary-tree-visual" role="img" aria-label="Binary Search Tree visualization" viewBox="0 0 640 150"></svg></div>
+          <div class="result bt-result" aria-live="polite"><span class="muted">Status</span><strong id="bt-status">Insert a value to start building your tree.</strong></div>
+          <div class="study-grid">
+            <div class="study-topic"><h3>Tree size</h3><p><strong id="bt-count">0</strong> nodes</p></div>
+            <div class="study-topic"><h3>Postorder result</h3><p id="bt-postorder">—</p></div>
+          </div>
+        </div>
+      </section>
+      <section id="bt-info" role="tabpanel" aria-labelledby="bt-info-tab" hidden>
+        <div class="card study-info"><span class="wb-kicker">A QUICK GUIDE</span><h2>Binary Search Tree methods</h2>
+          <div class="study-grid">
+            <article class="study-topic"><h3>search(self, root, key)</h3><p>Compares the key with the current node. It searches the left subtree when the key is smaller, and the right subtree when it is larger. It returns the matching node or <code>None</code>.</p></article>
+            <article class="study-topic"><h3>post_traversal(self, start, traversal)</h3><p>Visits the left subtree, then the right subtree, and finally the current node. This is the postorder sequence: Left → Right → Root.</p></article>
+            <article class="study-topic"><h3>delete_node(self, root, key)</h3><p>Finds the node and removes it. It handles a node with no child, one child, or two children. For two children, it replaces the node with its inorder successor.</p></article>
+            <article class="study-topic"><h3>Example</h3><p>Insert <code>50, 30, 70, 20, 40, 60, 80</code>. The postorder traversal is <code>20, 40, 30, 60, 80, 70, 50</code>.</p></article>
+          </div>
+          <h2 class="study-reference-heading">References</h2>
+          <ol class="study-references"><li><span>GeeksforGeeks</span><a class="wb-source" href="https://www.geeksforgeeks.org/introduction-to-binary-search-tree-data-structure-and-algorithm-tutorials/" target="_blank" rel="noopener noreferrer">Binary Search Tree — Introduction ↗</a></li><li><span>OpenDSA</span><a class="wb-source" href="https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/BST.html" target="_blank" rel="noopener noreferrer">Binary Search Trees ↗</a></li></ol>
+        </div>
+      </section>
+    </main>
+    <footer>AVER♡</footer>
+  </div>
+</body>
+</html>

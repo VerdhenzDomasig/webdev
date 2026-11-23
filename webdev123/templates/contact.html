@@ -1,0 +1,84 @@
+<!-- #Contact -->
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact | VERDHENZ </title>
+    <meta name="description" content="My programming portfolio and interactive tools.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23ed4aaa'/%3E%3Ctext x='6' y='24' font-size='25' fill='white'%3E♡%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}" defer>
+    </script>
+  </head>
+  <body>
+
+    <div class="site-window">
+      
+      <video class="video-background" autoplay muted loop playsinline aria-hidden="true" preload="auto">
+        <source src="{{ url_for('static', filename='assets/background.mp4') }}" type="video/mp4">
+      </video>
+      
+      <div class="window-titlebar">
+        <span>verdhenz.online</span>
+        <span class="window-controls" aria-hidden="true">
+          <span>−</span><span>□</span><span>×</span>
+        </span>
+      </div>
+    
+    <header>
+      
+      <a class="brand" href="{{ url_for('index') }}">VERDHENZ <span aria-hidden="true">✧</span></a>
+      
+      <nav aria-label="Main navigation">
+        <a class="" href="{{ url_for('index') }}">Home</a>
+        <a class="" href="{{ url_for('profile') }}">Profile</a>
+        <a class="" href="{{ url_for('works') }}">Works</a>
+        <a class="active" href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+    </header>
+    
+    <main>
+      <div class="eyebrow">Let's connect ♡</div>
+      
+      <h1 class="page-title">Contact Me</h1>
+      
+      <section class="card profile">
+        
+        <div>
+          
+          <h2>Verdhenz Apple</h2>
+          
+          <p>Every project is a chance to learn something new. If you have feedback, ideas, or a coding journey to share, I’d love to hear from you! ♡</p>
+          
+          <dl class="details">
+            <div>
+              
+              <dt>Email</dt>
+              <dd>verdhenzapplem.domasig@gmail.com</dd>
+            </div>
+            <div>
+              
+              <dt>Phone</dt>
+              <dd>09383656082</dd>
+            </div>
+            <div>
+              
+              <dt>Location</dt>
+              <dd>Pasig City, Metro Manila</dd>
+            </div>
+            <div>
+              
+              <dt>Social account</dt>
+              <dd>https://www.facebook.com/verdhenz/</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+    
+    <footer>AVER♡</footer>
+    </div>
+  </body>
+</html>
